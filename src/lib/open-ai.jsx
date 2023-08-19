@@ -23,7 +23,7 @@ const OpenAi = ({prompt}) => {
             },
         ],
         temperature: 0,
-        max_tokens: 100,
+        max_tokens: 300,
         stream: false,
         n: 1, //liczba odpowiedzi
     }
@@ -43,9 +43,9 @@ const OpenAi = ({prompt}) => {
 
 
     return (
-        <div>
+        <pre>
             {output}
-        </div>
+        </pre>
     );
 };
 

@@ -1,7 +1,7 @@
 import {useForm} from "react-hook-form";
 import OpenAi from "../lib/open-ai.jsx";
 import React, {useState} from "react";
-import {Stack} from "@mui/material";
+import {Stack, Button} from "@mui/material";
 
 function Chat() {
     const [prompt, setPrompt] = useState('')
@@ -19,6 +19,7 @@ function Chat() {
 
     return (
         <>
+            <Button variant="contained" color="primary">Test</Button>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Stack spacing={2} width={{p: 10}}>
                     <p>Prompt:</p>

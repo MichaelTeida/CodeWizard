@@ -97,8 +97,8 @@ export default function PrimarySearchAppBar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Profil</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Moje konto</MenuItem>
         </Menu>
     );
 
@@ -125,7 +125,7 @@ export default function PrimarySearchAppBar() {
                         <MailIcon />
                     </Badge>
                 </IconButton>
-                <p>Messages</p>
+                <p>Wiadomości</p>
             </MenuItem>
             <MenuItem>
                 <IconButton
@@ -137,7 +137,7 @@ export default function PrimarySearchAppBar() {
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
-                <p>Notifications</p>
+                <p>Powiadomienia</p>
             </MenuItem>
             <MenuItem onClick={handleProfileMenuOpen}>
                 <IconButton
@@ -149,7 +149,7 @@ export default function PrimarySearchAppBar() {
                 >
                     <AccountCircle />
                 </IconButton>
-                <p>Profile</p>
+                <p>Profil</p>
             </MenuItem>
         </Menu>
     );
@@ -173,14 +173,14 @@ export default function PrimarySearchAppBar() {
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        MUI
+                        🧙‍♂️ CodeWizard
                     </Typography>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
-                            placeholder="Search…"
+                            placeholder="Szukaj…"
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
