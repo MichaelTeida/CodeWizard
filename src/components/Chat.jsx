@@ -1,6 +1,10 @@
 import {useForm} from "react-hook-form";
+import OpenAi from "../lib/open-ai.jsx";
+import React, {useState} from "react";
 
 function Chat() {
+    const [prompt, setPrompt] = useState('')
+
     const {
         register,
         handleSubmit,
@@ -9,6 +13,7 @@ function Chat() {
 
     const onSubmit = (data) => {
         console.log(data);
+        setPrompt(data.prompt)
     };
 
     return (
@@ -33,9 +38,11 @@ function Chat() {
                     </div>
                 )}
             </form>
-                <div>
-                    <p>Output: </p>
-                </div>
+            <div>
+                {prompt &&
+                    (<OpenAi prompt={prompt}/>)
+                }
+            </div>
         </>
     );
 }
