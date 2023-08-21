@@ -27,6 +27,9 @@ export function lightTheme() {
                 dark: '#3208a8',
                 contrastText: '#fff',
             },
+            background: {
+                default: '#f6f6f6',
+            }
         }
     });
 }

@@ -13,7 +13,7 @@ import {ThemeProvider} from "@mui/material";
 function App() {
     const [mode, setMode] = useState("dark")
 
-    const theme = mode === "light" ? darkTheme : lightTheme
+    const theme = mode === "light" ? darkTheme() : lightTheme();
 
     return (
         <ThemeProvider theme={theme}>

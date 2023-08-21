@@ -4,6 +4,8 @@ import MessageIcon from '@mui/icons-material/Message';
 import ErrorIcon from '@mui/icons-material/Error';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HelpIcon from '@mui/icons-material/Help';
+import HistoryIcon from '@mui/icons-material/History';
+
 
 const Sidebar = () => {
     return (
@@ -19,11 +21,19 @@ const Sidebar = () => {
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>
-                        <ListItemButton component="a" href="#about">
+                        <ListItemButton component="a" href="#instruction">
                             <ListItemIcon>
                                 <HelpIcon/>
                             </ListItemIcon>
-                            <ListItemText primary="Opis"/>
+                            <ListItemText primary="Instrukcja"/>
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <ListItemButton component="a" href="#history">
+                            <ListItemIcon>
+                                <HistoryIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Historia"/>
                         </ListItemButton>
                     </ListItem>
                     <ListItem disablePadding>

@@ -200,9 +200,9 @@ export default function Header({setMode, mode}) {
                     </Search>
                     <Box sx={{flexGrow: 1}}/>
                     <Box sx={{display: {xs: 'none', md: 'flex'}}}>
-                        <IconButton size="large" color="inherit">
+                        <IconButton color="inherit">
                             <ModeNight/>
-                            <Switch onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}/>
+                            <Switch color="default" onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}/>
                         </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">

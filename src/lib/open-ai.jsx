@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import { OpenAIApi, Configuration } from 'openai';
 
-const OpenAi = ({prompt}) => {
+const OpenAi = ({prompt, action}) => {
     const [output, setOutput] = useState('')
 
     const configuration = new Configuration({
@@ -14,16 +14,40 @@ const OpenAi = ({prompt}) => {
 
     const openai = new OpenAIApi(configuration); // delete "Refused to set unsafe header "User-Agent""
 
+    let description = null
+
+    if (action === "rate") {
+        description = `Użytkownik wybrał opcję oceniania kodu. Oceń podany przez niego kod`
+    } else if (action === "shorten") {
+        description = "Użytkownik wybrał opcję skracania kodu. Mocno skróć podany przez niego kod"
+    } else if (action === "repair") {
+        description = "Użytkownik wybrał opcję naprawiania kodu. Napraw podany przez niego kod"
+    } else {
+        description = "Użytkownik nie wybrał żadnej opcji"
+    }
+
     const params = {
         model: "gpt-3.5-turbo",
         messages: [
             {
+                role: "system",
+                content: `Jesteś asystentem CodeWizard, który w zależności od zaznaczonej opcji użytkownika: ocenia, skraca, naprawia kod`
+            },
+            {
+                role: "system",
+                content: `Do działania potrzebny Ci jest kod programowania oraz zaznaczona jedna z opcji. Bez tego nie możesz funkcjonować. Twoja odpowiedź to maksymalnie 600 znaków`
+            },
+            {
                 role: "user",
                 content: prompt
             },
+            {
+                role: "system",
+                content: description
+            },
         ],
         temperature: 0,
-        max_tokens: 300,
+        max_tokens: 600,
         stream: false,
         n: 1, //liczba odpowiedzi
     }
