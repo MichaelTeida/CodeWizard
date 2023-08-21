@@ -15,7 +15,7 @@ import {
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SendIcon from '@mui/icons-material/Send';
-import {CheckBox, FavoriteBorder} from "@mui/icons-material";
+import {FavoriteBorder} from "@mui/icons-material";
 
 function Chat() {
     const [prompt, setPrompt] = useState('')

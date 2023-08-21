@@ -163,7 +163,7 @@ export default function Header({setMode, mode}) {
                 >
                     <ModeNight/>
                 </IconButton>
-                <Switch onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}/>
+                <Switch color="default" onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}/>
             </MenuItem>
         </Menu>
     );
