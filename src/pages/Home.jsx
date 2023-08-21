@@ -1,11 +1,18 @@
 import Chat from "../components/Chat.jsx";
+import {Box, Stack} from "@mui/material";
+import Header from "../components/Header.jsx";
+import Sidebar from "../components/Sidebar.jsx";
+import React from "react";
 
 function Home() {
     return (
-        <>
-            <h1>CHAT</h1>
-            <Chat/>
-        </>
+        <Box>
+            <Header/>
+            <Stack direction="row" justifyContent="space-between">
+                <Sidebar/>
+                <Chat/>
+            </Stack>
+        </Box>
     )
 }
 
