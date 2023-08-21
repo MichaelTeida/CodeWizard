@@ -10,11 +10,12 @@ import {
     IconButton,
     Typography,
     Box,
-    TextField, ToggleButtonGroup, ToggleButton
+    TextField, ToggleButtonGroup, ToggleButton, Checkbox
 } from "@mui/material";
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SendIcon from '@mui/icons-material/Send';
+import {CheckBox, FavoriteBorder} from "@mui/icons-material";
 
 function Chat() {
     const [prompt, setPrompt] = useState('')
@@ -48,7 +49,7 @@ function Chat() {
                                 aria-label="Platform"
                                 value={action}
                                 onChange={handleChange}
-                                fullWidth="true"
+                                fullWidth
                             >
                                 <ToggleButton spacing={2} value="rate">Oceń kod</ToggleButton>
                                 <ToggleButton value="android">Skróc kod</ToggleButton>
@@ -67,7 +68,7 @@ function Chat() {
                                 })}
                             />
                             {/*<input type="submit" value="Wygeneruj" color="primary" variant="contained"/>*/}
-                            <Button type="submit" color="primary" variant="contained" endIcon={<SendIcon />}>
+                            <Button type="submit" color="primary" variant="contained" endIcon={<SendIcon/>}>
                                 Wygeneruj
                             </Button>
                             {errors.prompt && (
@@ -84,14 +85,28 @@ function Chat() {
                     {prompt &&
                         <Card>
                             <CardContent>
-                                <Typography component={'span'} variant="body2" color="text.secondary">
+                                <Typography variant="h6" fontWeight={600}>Kod:</Typography>
+                                <Card variant="outlined">
+                                    <CardContent>
+                                        <Typography component={'span'} variant="body1">
+                                            <OpenAi prompt={prompt}/>
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </CardContent>
+                            <CardContent>
+                                <Typography variant="h6" fontWeight={600}>Komentarz:</Typography>
+                                <Card variant="outlined">
+                                    <CardContent>
+                                <Typography component={'span'} variant="body1">
                                     <OpenAi prompt={prompt}/>
                                 </Typography>
                             </CardContent>
+                        </Card>
+                            </CardContent>
                             <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon/>
-                                </IconButton>
+                                <Checkbox icon={<FavoriteBorder/>}
+                                          checkedIcon={<FavoriteIcon sx={{color: "#FF0000"}}/>}/>
                                 <IconButton aria-label="share">
                                     <ShareIcon/>
                                 </IconButton>

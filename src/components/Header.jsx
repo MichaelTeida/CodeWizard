@@ -58,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
     },
 }));
 
-export default function Header() {
+export default function Header({setMode, mode}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -153,7 +153,7 @@ export default function Header() {
                 </IconButton>
                 <p>Profil</p>
             </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
+            <MenuItem>
                 <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -163,14 +163,14 @@ export default function Header() {
                 >
                     <ModeNight/>
                 </IconButton>
-                <Switch/>
+                <Switch onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}/>
             </MenuItem>
         </Menu>
     );
 
     return (
-        <Box sx={{flexGrow: 1}}>
-            <AppBar position="static">
+        <>
+            <AppBar position="sticky">
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -202,7 +202,7 @@ export default function Header() {
                     <Box sx={{display: {xs: 'none', md: 'flex'}}}>
                         <IconButton size="large" color="inherit">
                             <ModeNight/>
-                            <Switch/>
+                            <Switch onChange={(e) => setMode(mode === 'light' ? 'dark' : 'light')}/>
                         </IconButton>
                         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
@@ -246,6 +246,6 @@ export default function Header() {
             </AppBar>
             {renderMobileMenu}
             {renderMenu}
-        </Box>
+        </>
     );
 }

@@ -4,10 +4,15 @@ import Header from "../components/Header.jsx";
 import Sidebar from "../components/Sidebar.jsx";
 import React from "react";
 
-function Home() {
+function Home({setMode, mode}) {
     return (
-        <Box>
-            <Header/>
+        <Box bgcolor={"background.default"}
+             sx={{
+                     minHeight: "100vh",
+             }}
+             color={"text.primary"}
+        >
+            <Header setMode={setMode} mode={mode} />
             <Stack direction="row" justifyContent="space-between">
                 <Sidebar/>
                 <Chat/>
