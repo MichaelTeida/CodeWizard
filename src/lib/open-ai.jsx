@@ -43,9 +43,9 @@ const OpenAi = ({prompt}) => {
 
 
     return (
-        <pre>
+        <>
             {output}
-        </pre>
+        </>
     );
 };
 
