@@ -35,7 +35,7 @@ const OpenAi = ({prompt, action}) => {
             },
             {
                 role: "system",
-                content: `Do działania potrzebny Ci jest kod programowania oraz zaznaczona jedna z opcji. Bez tego nie możesz funkcjonować. Twoja odpowiedź to maksymalnie 600 znaków`
+                content: `Do działania potrzebny Ci jest kod programowania oraz zaznaczona jedna z opcji. Bez tego nie możesz funkcjonować. Twoja odpowiedź to maksymalnie 1000 znaków`
             },
             {
                 role: "user",
@@ -47,7 +47,7 @@ const OpenAi = ({prompt, action}) => {
             },
         ],
         temperature: 0,
-        max_tokens: 600,
+        max_tokens: 1000,
         stream: false,
         n: 1, //liczba odpowiedzi
     }

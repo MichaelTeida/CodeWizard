@@ -6,18 +6,10 @@ import React from "react";
 
 function Home({setMode, mode}) {
     return (
-        <Box bgcolor={"background.default"}
-             sx={{
-                     minHeight: "100vh",
-             }}
-             color={"text.primary"}
-        >
-            <Header setMode={setMode} mode={mode} />
             <Stack direction="row" justifyContent="space-between">
                 <Sidebar/>
                 <Chat/>
             </Stack>
-        </Box>
     )
 }
 

@@ -5,53 +5,74 @@ import ErrorIcon from '@mui/icons-material/Error';
 import SettingsIcon from '@mui/icons-material/Settings';
 import HelpIcon from '@mui/icons-material/Help';
 import HistoryIcon from '@mui/icons-material/History';
-
+import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
     return (
         <Box flex={2} p={3} sx={{display: {xs: "none", sm: "block"}}}>
             <Box position="fixed">
                 <List>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#">
-                            <ListItemIcon>
-                                <MessageIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Strona główna"/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#instruction">
-                            <ListItemIcon>
-                                <HelpIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Instrukcja"/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#history">
-                            <ListItemIcon>
-                                <HistoryIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Historia"/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#logs">
-                            <ListItemIcon>
-                                <ErrorIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Logi błędów"/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="#settings">
-                            <ListItemIcon>
-                                <SettingsIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Ustawienia"/>
-                        </ListItemButton>
-                    </ListItem>
+                    <NavLink to="/" style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}}
+                             end>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <MessageIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Strona główna"/>
+                            </ListItemButton>
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to="/instruction"
+                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}} end>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <HelpIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Instrukcja"/>
+                            </ListItemButton>
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to="/history"
+                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}} end>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <HistoryIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Historia"/>
+                            </ListItemButton>
+                        </ListItem>
+                    </NavLink>
+                    <NavLink to="/logs"
+                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}} end>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <ErrorIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Logi błędów"/>
+                            </ListItemButton>
+                        </ListItem>
+
+                    </NavLink>
+                    <NavLink to="/settings"
+                             style={({isActive}) => isActive ? {
+                                 color: 'red',
+                                 background: "gray",
+                                 textDecoration: 'none'
+                             } : {}} end>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <SettingsIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Ustawienia"/>
+                            </ListItemButton>
+                        </ListItem>
+
+                    </NavLink>
                 </List>
             </Box>
         </Box>
