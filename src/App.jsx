@@ -10,7 +10,7 @@ import {lightTheme, darkTheme} from "./theme/theme.jsx";
 
 import {ThemeProvider} from "@mui/material";
 
-import {Route, Router, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Instruction from "./pages/Instruction.jsx";
 import History from "./pages/History.jsx";
 import Logs from "./pages/Logs.jsx";

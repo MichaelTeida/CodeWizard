@@ -75,7 +75,7 @@ function Chat() {
                                         <div>
                         <span>
                             {errors.prompt.type === "required" && "Wymagane pole: Prompt"}
-                            {errors.prompt.type === "maxLength" && "Maksymalna liczba słów: 1000"}
+                            {errors.prompt.type === "maxLength" && "Maksymalna liczba znaków: 1000"}
                         </span>
                                         </div>
                                     )}

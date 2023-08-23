@@ -13,7 +13,8 @@ export function darkTheme() {
             background: {
                 default: '#0a0123',
                 paper: '#100238',
-            }
+            },
+            bgSidebar: '#1C0F42',
         }
     });
 }
@@ -29,7 +30,8 @@ export function lightTheme() {
             },
             background: {
                 default: '#f6f6f6',
-            }
+            },
+            bgSidebar: '#fff',
         }
     });
 }

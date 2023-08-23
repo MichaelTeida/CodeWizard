@@ -9,11 +9,10 @@ import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
     return (
-        <Box flex={2} p={3} sx={{display: {xs: "none", sm: "block"}}}>
+        <Box flex={2} p={3} sx={{display: {xs: "none", sm: "block"}, bgcolor: "bgSidebar", minHeight: "100vh" }}>
             <Box position="fixed">
                 <List>
-                    <NavLink to="/" style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}}
-                             end>
+                    <NavLink to="/" style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -24,7 +23,7 @@ const Sidebar = () => {
                         </ListItem>
                     </NavLink>
                     <NavLink to="/instruction"
-                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}} end>
+                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -35,7 +34,7 @@ const Sidebar = () => {
                         </ListItem>
                     </NavLink>
                     <NavLink to="/history"
-                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}} end>
+                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -46,7 +45,7 @@ const Sidebar = () => {
                         </ListItem>
                     </NavLink>
                     <NavLink to="/logs"
-                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {}} end>
+                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -62,7 +61,7 @@ const Sidebar = () => {
                                  color: 'red',
                                  background: "gray",
                                  textDecoration: 'none'
-                             } : {}} end>
+                             } : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
