@@ -18,7 +18,7 @@ const Instruction = () => {
                             <Divider sx={{mb: 2}}/>
                             <Typography>
                                 Jesteś teraz w interaktywnym środowisku, które pozwala mi pomagać Ci w pracy
-                                z kodem. Wybierz jedną z opcji poniżej:
+                                z kodem.
                             </Typography>
                             <List>
                                 <ListItem><ListItemIcon><Circle/></ListItemIcon>Wybierz jedną z trzech dostępnych opcji:
@@ -29,8 +29,6 @@ const Instruction = () => {
                                     kompletny i poprawny, aby uzyskać dokładne wyniki.</ListItem>
                                 <ListItem><ListItemIcon><Circle/></ListItemIcon>Po wprowadzeniu kodu, kliknij przycisk
                                     "Wygeneruj" aby uruchomić wybraną akcję.</ListItem>
-                                <ListItem><ListItemIcon><Circle/></ListItemIcon>Wprowadź kod programu w pole tekstowe
-                                    poniżej opcji.</ListItem>
                                 <ListItem><ListItemIcon><Circle/></ListItemIcon>W zależności od wybranej opcji:
                                     <List>
                                         <ListItem>"Oceń kod" oceni jakość i składnię kodu, dostarczając ewentualne
@@ -41,7 +39,7 @@ const Instruction = () => {
                                             kodzie.</ListItem>
                                     </List>
                                 </ListItem>
-                                <ListItem><ListItemIcon><Circle/></ListItemIcon>Maksymalna długość odpowiedzi to 600
+                                <ListItem><ListItemIcon><Circle/></ListItemIcon>Maksymalna długość odpowiedzi to 2000
                                     znaków. Bądź zwięzły i precyzyjny.</ListItem>
                             </List>
 
