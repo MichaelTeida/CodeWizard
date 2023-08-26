@@ -12,7 +12,7 @@ const Sidebar = () => {
         <Box flex={2} p={3} sx={{display: {xs: "none", sm: "block"}, bgcolor: "bgSidebar", minHeight: "100vh" }}>
             <Box position="fixed">
                 <List>
-                    <NavLink to="/" style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
+                    <NavLink to="/" style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -23,7 +23,7 @@ const Sidebar = () => {
                         </ListItem>
                     </NavLink>
                     <NavLink to="/instruction"
-                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
+                             style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -34,7 +34,7 @@ const Sidebar = () => {
                         </ListItem>
                     </NavLink>
                     <NavLink to="/history"
-                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
+                             style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -45,7 +45,7 @@ const Sidebar = () => {
                         </ListItem>
                     </NavLink>
                     <NavLink to="/logs"
-                             style={({isActive}) => isActive ? {color: 'red', textDecoration: 'underline'} : {color: 'inherit'}} end>
+                             style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>

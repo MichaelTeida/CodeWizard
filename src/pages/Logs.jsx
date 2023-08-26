@@ -7,7 +7,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
-import {Box, Card, CardContent, Stack} from "@mui/material";
+import {Box, Card, CardContent, Divider, Stack} from "@mui/material";
 import Sidebar from "../components/Sidebar.jsx";
 
 import AutorenewIcon from '@mui/icons-material/Autorenew';
@@ -26,6 +26,7 @@ const Logs = () => {
                             <Typography variant="h5" gutterBottom>
                                 Timeline
                             </Typography>
+                            <Divider sx={{mb: 2}}/>
                             <Timeline position="alternate">
                                 <TimelineItem>
                                     <TimelineOppositeContent
@@ -86,7 +87,7 @@ const Logs = () => {
                                         <TimelineDot color="primary" variant="outlined">
                                             <SaveIcon/>
                                         </TimelineDot>
-                                        <TimelineConnector sx={{bgcolor: 'secondary.main'}} />
+                                        <TimelineConnector sx={{bgcolor: 'secondary.main'}}/>
                                     </TimelineSeparator>
                                     <TimelineContent sx={{py: '12px', px: 2, width: {xs: "25%"}}}>
                                         <Typography variant="h6" component="span">

@@ -10,7 +10,7 @@ import {
     IconButton,
     Typography,
     Box,
-    TextField, ToggleButtonGroup, ToggleButton, Checkbox
+    TextField, ToggleButtonGroup, ToggleButton, Checkbox, Divider
 } from "@mui/material";
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -41,6 +41,10 @@ function Chat() {
                 <Stack spacing={2}>
                     <Card>
                         <CardContent>
+                            <Typography variant="h5" gutterBottom >
+                                Asystent AI
+                            </Typography>
+                            <Divider sx={{mb: 2}}/>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <Stack spacing={2} width={{p: 8}}>
                                     <ToggleButtonGroup
