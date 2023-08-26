@@ -15,8 +15,14 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import {Switch} from "@mui/material";
+import {Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch} from "@mui/material";
 import ModeNight from '@mui/icons-material/ModeNight';
+import {NavLink} from "react-router-dom";
+import MessageIcon from "@mui/icons-material/Message.js";
+import HelpIcon from "@mui/icons-material/Help.js";
+import HistoryIcon from "@mui/icons-material/History.js";
+import ErrorIcon from "@mui/icons-material/Error.js";
+import SettingsIcon from "@mui/icons-material/Settings.js";
 
 const Search = styled('div')(({theme}) => ({
     position: 'relative',
@@ -61,9 +67,10 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 export default function Header({setMode, mode}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+    const [mobileHamburger, setMobileHamburger] = React.useState(false);
 
     const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);''
+    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
@@ -73,6 +80,10 @@ export default function Header({setMode, mode}) {
         setMobileMoreAnchorEl(null);
     };
 
+    const handleMobileHamburgerClose = () => {
+        setMobileHamburger(false);
+    };
+
     const handleMenuClose = () => {
         setAnchorEl(null);
         handleMobileMenuClose();
@@ -80,6 +91,10 @@ export default function Header({setMode, mode}) {
 
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
+    };
+
+    const handleMobileHamburgerOpen = () => {
+        setMobileHamburger(true);
     };
 
     const menuId = 'primary-search-account-menu';
@@ -104,6 +119,84 @@ export default function Header({setMode, mode}) {
         </Menu>
     );
 
+    const renderHamburger = (
+        <Drawer anchor="left" open={mobileHamburger} onClose={handleMobileHamburgerClose}>
+            <List sx={{ width: 250 }}>
+                <ListItem>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ display: { xs: 'block', sm: 'none' } }}
+                    >
+                        🧙‍♂️ CodeWizard
+                    </Typography>
+                </ListItem>
+                <Divider sx={{mb: 1}}/>
+                <NavLink to="/" style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <MessageIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Strona główna"/>
+                        </ListItemButton>
+                    </ListItem>
+                </NavLink>
+                <NavLink to="/instruction"
+                         style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <HelpIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Instrukcja"/>
+                        </ListItemButton>
+                    </ListItem>
+                </NavLink>
+                <NavLink to="/history"
+                         style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <HistoryIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Historia"/>
+                        </ListItemButton>
+                    </ListItem>
+                </NavLink>
+                <NavLink to="/logs"
+                         style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <ErrorIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Logi błędów"/>
+                        </ListItemButton>
+                    </ListItem>
+
+                </NavLink>
+                <NavLink to="/settings"
+                         style={({isActive}) => isActive ? {
+                             color: 'red',
+                             background: "gray",
+                             textDecoration: 'none'
+                         } : {color: 'inherit'}} end>
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <SettingsIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Ustawienia"/>
+                        </ListItemButton>
+                    </ListItem>
+
+                </NavLink>
+            </List>
+        </Drawer>
+    )
+
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -121,7 +214,7 @@ export default function Header({setMode, mode}) {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
+            <MenuItem >
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="error">
                         <MailIcon/>
@@ -177,15 +270,16 @@ export default function Header({setMode, mode}) {
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
-                        sx={{mr: 2}}
+                        sx={{ mr: 2, display: { sm: 'none' }}}
+                        onClick={handleMobileHamburgerOpen}
                     >
-                        <MenuIcon/>
+                        <MenuIcon />
                     </IconButton>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{display: {xs: 'none', sm: 'block'}}}
+                        sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
                         🧙‍♂️ CodeWizard
                     </Typography>
@@ -244,6 +338,7 @@ export default function Header({setMode, mode}) {
                     </Box>
                 </Toolbar>
             </AppBar>
+            {renderHamburger}
             {renderMobileMenu}
             {renderMenu}
         </>

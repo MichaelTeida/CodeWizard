@@ -65,7 +65,7 @@ function Chat() {
                                         row={3}
                                         maxRows={10}
                                         type="text"
-                                        placeholder="Prompt"
+                                        placeholder="Twój kod"
                                         {...register("prompt", {
                                             required: true,
                                             maxLength: 1000,
@@ -96,16 +96,6 @@ function Chat() {
                                     <CardContent>
                                         <Typography className="output-text" component={'span'} variant="body1">
                                             <OpenAi prompt={prompt} action={action}/>
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </CardContent>
-                            <CardContent>
-                                <Typography variant="h6" fontWeight={600}>Komentarz:</Typography>
-                                <Card variant="outlined">
-                                    <CardContent>
-                                        <Typography component={'span'} variant="body1">
-                                            {/*<OpenAi prompt={prompt} action={action}/>*/}
                                         </Typography>
                                     </CardContent>
                                 </Card>

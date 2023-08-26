@@ -14,7 +14,7 @@ import {
 import Sidebar from "../components/Sidebar.jsx";
 
 const Settings = () => {
-    const [volume, setVolume] = useState(50);
+    const [volume, setVolume] = useState(0);
     const [notifications, setNotifications] = useState(true);
     const [language, setLanguage] = useState('en');
     const [speed, setSpeed] = useState(1);
@@ -68,6 +68,9 @@ const Settings = () => {
                                     onChange={handleVolumeChange}
                                     aria-labelledby="volume-slider"
                                     valueLabelDisplay="auto"
+                                    step={0.1}
+                                    min={0}
+                                    max={2}
                                 />
                             </Box>
                             <Box sx={{mb: 2}}>
