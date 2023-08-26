@@ -68,7 +68,8 @@ function Chat() {
                                         placeholder="Twój kod"
                                         {...register("prompt", {
                                             required: true,
-                                            maxLength: 1000,
+                                            minLength: 5,
+                                            maxLength: 2000,
                                         })}
                                     />
                                     {/*<input type="submit" value="Wygeneruj" color="primary" variant="contained"/>*/}
@@ -78,8 +79,9 @@ function Chat() {
                                     {errors.prompt && (
                                         <div>
                         <span>
-                            {errors.prompt.type === "required" && "Wymagane pole: Prompt"}
-                            {errors.prompt.type === "maxLength" && "Maksymalna liczba znaków: 1000"}
+                            {errors.prompt.type === "required" && "Wymagane pole: \"Twój kod\""}
+                            {errors.prompt.type === "minLength" && "Minimalna liczba znaków: 5"}
+                            {errors.prompt.type === "maxLength" && "Maksymalna liczba znaków: 2000"}
                         </span>
                                         </div>
                                     )}
@@ -91,7 +93,7 @@ function Chat() {
                     {prompt &&
                         <Card>
                             <CardContent>
-                                <Typography variant="h6" fontWeight={600}>Kod:</Typography>
+                                <Typography variant="h6" fontWeight={600} gutterBottom>Wynik:</Typography>
                                 <Card variant="outlined">
                                     <CardContent>
                                         <Typography className="output-text" component={'span'} variant="body1">

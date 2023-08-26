@@ -47,7 +47,7 @@ const OpenAi = ({prompt, action}) => {
             },
         ],
         temperature: 0,
-        max_tokens: 1000,
+        max_tokens: 2000,
         stream: false,
         n: 1, //liczba odpowiedzi
     }
@@ -62,7 +62,7 @@ const OpenAi = ({prompt, action}) => {
                 return "Sorry, there was an error processing your request.";
             }
         }
-        generateOutput()
+        setTimeout(generateOutput, 2500);
     }, [prompt]);
 
 

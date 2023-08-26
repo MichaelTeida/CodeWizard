@@ -14,7 +14,7 @@ import {
 import Sidebar from "../components/Sidebar.jsx";
 
 const Settings = () => {
-    const [volume, setVolume] = useState(0);
+    const [volume, setVolume] = useState(0.1);
     const [notifications, setNotifications] = useState(true);
     const [language, setLanguage] = useState('en');
     const [speed, setSpeed] = useState(1);
