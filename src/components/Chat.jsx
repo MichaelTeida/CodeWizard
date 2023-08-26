@@ -41,7 +41,7 @@ function Chat() {
                 <Stack spacing={2}>
                     <Card>
                         <CardContent>
-                            <Typography variant="h5" gutterBottom >
+                            <Typography variant="h5" gutterBottom>
                                 Asystent AI
                             </Typography>
                             <Divider sx={{mb: 2}}/>

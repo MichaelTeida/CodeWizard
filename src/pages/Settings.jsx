@@ -88,7 +88,7 @@ const Settings = () => {
                                 </select>
                             </Box>
                             <Box sx={{mb: 2}}>
-                                <Typography variant="h6" >Szybkość:</Typography>
+                                <Typography variant="h6">Szybkość:</Typography>
                                 <Slider
                                     value={speed}
                                     onChange={handleSpeedChange}

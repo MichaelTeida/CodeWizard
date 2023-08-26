@@ -1,5 +1,5 @@
-import React, { useEffect, useState} from 'react';
-import { OpenAIApi, Configuration } from 'openai';
+import React, {useEffect, useState} from 'react';
+import {OpenAIApi, Configuration} from 'openai';
 
 const OpenAi = ({prompt, action}) => {
     const [output, setOutput] = useState('')

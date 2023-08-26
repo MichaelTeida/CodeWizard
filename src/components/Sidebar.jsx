@@ -9,7 +9,7 @@ import {NavLink} from 'react-router-dom'
 
 const Sidebar = () => {
     return (
-        <Box flex={2} p={3} sx={{display: {xs: "none", sm: "block"}, bgcolor: "bgSidebar", minHeight: "100vh" }}>
+        <Box flex={2} p={3} sx={{display: {xs: "none", sm: "block"}, bgcolor: "bgSidebar", minHeight: "100vh"}}>
             <Box position="fixed">
                 <List>
                     <NavLink to="/" style={({isActive}) => isActive ? {color: 'red'} : {color: 'inherit'}} end>

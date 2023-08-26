@@ -5,10 +5,10 @@ import React from "react";
 
 function Home() {
     return (
-            <Stack direction="row" justifyContent="space-between">
-                <Sidebar/>
-                <Chat/>
-            </Stack>
+        <Stack direction="row" justifyContent="space-between">
+            <Sidebar/>
+            <Chat/>
+        </Stack>
     )
 }
 

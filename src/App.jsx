@@ -24,13 +24,13 @@ function App() {
     const theme = mode === "light" ? darkTheme() : lightTheme();
 
     return (
-            <ThemeProvider theme={theme}>
-                <Box bgcolor={"background.default"}
-                     sx={{
-                         minHeight: "100vh",
-                     }}
-                     color={"text.primary"}>
-                <Header setMode={setMode} mode={mode} />
+        <ThemeProvider theme={theme}>
+            <Box bgcolor={"background.default"}
+                 sx={{
+                     minHeight: "100vh",
+                 }}
+                 color={"text.primary"}>
+                <Header setMode={setMode} mode={mode}/>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/instruction" element={<Instruction/>}/>
@@ -39,8 +39,8 @@ function App() {
                     <Route path="/settings" element={<Settings/>}/>
                 </Routes>
 
-                </Box>
-            </ThemeProvider>
+            </Box>
+        </ThemeProvider>
     )
 }
 

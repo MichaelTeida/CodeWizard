@@ -6,7 +6,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import {Box, Card, CardContent, Divider, Stack, Typography} from "@mui/material";
+import {Box, Card, CardContent, Stack, Typography} from "@mui/material";
 import TimelineOppositeContent, {
     timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
@@ -19,10 +19,9 @@ const History = () => {
                 <Stack spacing={2}>
                     <Card>
                         <CardContent>
-                            <Typography variant="h5" gutterBottom >
+                            <Typography variant="h5" gutterBottom>
                                 Historia
                             </Typography>
-                            <Divider sx={{mb: 2}}/>
                             <Timeline
                                 sx={{
                                     [`& .${timelineOppositeContentClasses.root}`]: {

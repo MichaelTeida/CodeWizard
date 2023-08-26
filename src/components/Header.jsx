@@ -121,13 +121,13 @@ export default function Header({setMode, mode}) {
 
     const renderHamburger = (
         <Drawer anchor="left" open={mobileHamburger} onClose={handleMobileHamburgerClose}>
-            <List sx={{ width: 250 }}>
+            <List sx={{width: 250}}>
                 <ListItem>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: 'block', sm: 'none' } }}
+                        sx={{display: {xs: 'block', sm: 'none'}}}
                     >
                         🧙‍♂️ CodeWizard
                     </Typography>
@@ -214,7 +214,7 @@ export default function Header({setMode, mode}) {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem >
+            <MenuItem>
                 <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                     <Badge badgeContent={4} color="error">
                         <MailIcon/>
@@ -270,16 +270,16 @@ export default function Header({setMode, mode}) {
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
-                        sx={{ mr: 2, display: { sm: 'none' }}}
+                        sx={{mr: 2, display: {sm: 'none'}}}
                         onClick={handleMobileHamburgerOpen}
                     >
-                        <MenuIcon />
+                        <MenuIcon/>
                     </IconButton>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
+                        sx={{display: {xs: 'none', sm: 'block'}}}
                     >
                         🧙‍♂️ CodeWizard
                     </Typography>
